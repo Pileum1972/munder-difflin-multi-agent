@@ -1,0 +1,33 @@
+Reviewing the business from April 1, 2025, to April 17, 2025:
+
+**Financial Overview:**  
+- Cash at Start: $45,059.7  
+- Cash at End: $45,274.1 (Change: +$214.4)  
+- Inventory Value at Start: $4,940.3  
+- Inventory Value at End: $4,668.4 (Change: -$271.9)  
+- Total Assets at End: $49,942.5 (Change: -$57.5)  
+- Revenue from this run: $1,400.0  
+
+**Requests Processed:**  
+- Total Requests: 20  
+- Fulfilled Requests: 12 (60% fulfillment rate)  
+- Requests with at least one declined item: 17 (85% of requests)  
+- Total Item Lines Requested: 59  
+
+**Top Selling Products:**  
+1. A4 paper: 10,250 units sold, $462.5 revenue  
+2. Cardstock: 3,300 units sold, $487.5 revenue  
+3. Glossy paper: 1,700 units sold, $340.0 revenue  
+4. Colored paper: 600 units sold, $60.0 revenue  
+
+**Declined Item Lines:**  
+- Declined Requests Reasons:  
+  - Not Carried: 31  
+  - Not in Stock: Various restock dates leading up to April 22, 2025.
+  
+**Recommendations for Improvement:**  
+1. **Improve Stock Management:**  Increase inventory levels for high-demand items like A4 and cardstock to reduce the number of declined requests.  
+2. **Diversify Product Range:**  Review and potentially expand the product range to incorporate items that customers frequently request but are currently not in stock.  
+3. **Enhance Fulfillment Efficiency:**  Identify bottlenecks in the request-fulfillment process to improve the fulfillment rate beyond 60%.  
+4. **Customer Engagement:**  Enhance communication on product availability and expected restock dates to manage customer expectations better.  
+5. **Regular Inventory Reviews:**  Establish regular reviews of inventory levels and sales trends to proactively address potential stock shortages.

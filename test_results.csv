@@ -1,0 +1,151 @@
+request_id,request_date,cash_balance,inventory_value,response,fulfilled,cash_before,cash_after,cash_delta,recorded_sale_total,restock_spend,reconciled,unrequested_lines,customer_deadline,late_lines
+1,2025-04-01,45124.7,4875.3,"Thank you for your request.
+Confirmed items:
+Cardstock, 100 sheets, ships on 2025-04-01.
+Glossy paper, 200 sheets, ships on 2025-04-01.
+Colored paper, 100 sheets, ships on 2025-04-01.
+Total for the confirmed items: $65.00 Your order totals 400 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.",True,45059.7,45124.7,65.0,65.0,0.0,True,0,2025-04-15,0
+2,2025-04-03,45124.7,4875.3,"Thank you for your request.
+Unavailable items (not ordered and not included in your total):
+200 balloons: We don't currently carry this item.
+500 sheets of colorful poster paper: We don't currently carry this item.
+300 roll of streamers: We don't currently carry this item.",False,45124.7,45124.7,0.0,0.0,0.0,True,0,2025-04-15,0
+3,2025-04-04,45081.55,4868.45,"Thank you for your request.
+
+Confirmed items:
+A4 paper, 10000, ships on 2025-04-11.
+
+Total for the confirmed items: $450.00 Your order totals 10,000 units, so our 10% bulk discount for orders of 10,000+ units applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+5000 sheets of A3 paper: We don't currently carry this item.
+500 reams of printer paper: We don't currently carry this item.",True,45124.7,45081.55,-43.15,450.0,493.15,True,0,2025-04-15,0
+4,2025-04-05,45133.6,4816.4,"Thank you for your request.
+
+Confirmed items:
+Cardstock, 500 sheets, ships on 2025-04-09
+A4 paper, 250 sheets, ships on 2025-04-09
+
+Total for the confirmed items: $87.50. Your order totals 750 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.",True,45081.55,45133.6,52.05,87.5,35.45,True,0,2025-04-15,0
+5,2025-04-05,45183.6,4766.4,"Thank you for your request.
+
+Confirmed items:
+Colored paper, 500, ships on 2025-04-05.
+Cardstock, 300, ships on 2025-04-09.
+
+Total for the confirmed items: $95.00. Your order totals 800 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+200 rolls of decorative washi tape. We don't currently carry this item.",True,45133.6,45183.6,50.0,95.0,45.0,True,0,2025-04-15,0
+6,2025-04-06,45183.6,4766.4,"Thank you for your request.
+Confirmed items:
+Cardstock, 200, ships on 2025-04-10.
+Total for the confirmed items: $30.00 Your order totals 200 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+Unavailable items (not ordered and not included in your total):
+500 sheets of colorful construction paper: We don't currently carry this item.
+300 sheets of white printer paper: We don't currently carry this item.",True,45183.6,45183.6,0.0,30.0,30.0,True,0,2025-04-15,0
+7,2025-04-07,45231.6,4718.4,"Thank you for your request.
+
+Confirmed items:
+Glossy paper, 500, ships on 2025-04-11.
+Cardstock, 200, ships on 2025-04-11.
+
+Total for the confirmed items: $130.00. Your order totals 700 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+300 poster boards (24"" x 36""), We don't currently carry this item.
+1000 sheets of matte A3 paper, We don't currently carry this item.",True,45183.6,45231.6,48.0,130.0,82.0,True,0,2025-04-15,0
+8,2025-04-07,45231.6,4718.4,"Thank you for your request.
+
+Confirmed items:
+Glossy paper, 500, ships on 2025-04-11.
+
+Total for the confirmed items: $100.00. Your order totals 500 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+1000 sheets of A4 matte paper - We don't carry this exact item; the closest item we stock is A4 paper.
+3000 sheets of A4 recycled paper - We don't carry this exact item; the closest item we stock is A4 paper.
+2000 sheets of A5 colored paper - We don't currently carry this item.",True,45231.6,45231.6,0.0,100.0,100.0,True,0,2025-04-15,0
+9,2025-04-07,45231.6,4718.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+200 sheets of A4 white printer paper: We can't source this quantity before your deadline (earliest availability: 2025-04-11).
+100 sheets of A3 glossy paper: We don't currently carry this item.
+50 packets of 100% recycled kraft paper envelopes: We don't currently carry this item.",False,45231.6,45231.6,0.0,0.0,0.0,True,0,2025-04-10,0
+13,2025-04-08,45231.6,4718.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+- A4 paper, 500 sheets: We can't source this quantity before your deadline (earliest availability: 2025-04-12).
+- Cardstock, 200 sheets: We can't source this quantity before your deadline (earliest availability: 2025-04-12).",False,45231.6,45231.6,0.0,0.0,0.0,True,0,2025-04-10,0
+12,2025-04-08,45231.6,4718.4,"Thank you for your request.
+Confirmed items:
+Cardstock, 200 units, ships on 2025-04-12.
+Total for the confirmed items: $30.00 Your order totals 200 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+Unavailable items (not ordered and not included in your total):
+100 paper napkins: We don't currently carry this item.
+500 sheets of standard printer paper: We don't currently carry this item.",True,45231.6,45231.6,0.0,30.0,30.0,True,0,2025-04-15,0
+10,2025-04-08,45231.6,4718.4,"Thank you for your request.
+
+Confirmed items:
+Glossy paper, 500 sheets, ships on 2025-04-12.
+Cardstock, 300 sheets, ships on 2025-04-12.
+
+Total for the confirmed items: $145.00 Your order totals 800 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.",True,45231.6,45231.6,0.0,145.0,145.0,True,0,2025-04-15,0
+11,2025-04-08,45231.6,4718.4,"Thank you for your request.
+Unavailable items (not ordered and not included in your total): 500 sheets of A3 glossy paper: We don't currently carry this item.
+300 sheets of A4 matte paper: We don't carry this exact item; the closest item we stock is A4 paper.",False,45231.6,45231.6,0.0,0.0,0.0,True,0,2025-04-15,0
+14,2025-04-09,45231.6,4718.4,"Thank you for your request.
+
+Confirmed items:
+Cardstock, 500, ships on 2025-04-13.
+
+Total for the confirmed items: $75.00. Your order totals 500 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+2000 sheets of poster paper: We don't currently carry this item.
+5000 sheets of A4 paper: We can't source this quantity before your deadline (earliest availability: 2025-04-16).",True,45231.6,45231.6,0.0,75.0,75.0,True,0,2025-04-15,0
+15,2025-04-12,45231.6,4718.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+500 reams of cardboard for signage: We don't currently carry this item.
+5000 sheets of A3 colored paper (assorted colors): We don't currently carry this item.
+10000 sheets of A4 white paper: We can't source this quantity before your deadline (earliest availability: 2025-04-19).",False,45231.6,45231.6,0.0,0.0,0.0,True,0,2025-04-15,0
+16,2025-04-13,45231.6,4718.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+200 sheets of colorful construction paper: We don't currently carry this item.
+100 sheets of poster board: We don't currently carry this item.
+500 sheets of A4 printer paper: We can't source this quantity before your deadline (earliest availability: 2025-04-17).",False,45231.6,45231.6,0.0,0.0,0.0,True,0,2025-04-15,0
+17,2025-04-14,45281.6,4668.4,"Thank you for your request.
+
+Confirmed items:
+Paper plates, 500, ships on 2025-04-14.
+
+Total for the confirmed items: $50.00. Your order totals 500 units; bulk discounts start at 1,000 units (5%), so standard pricing applies. Our pricing is consistent with 5 similar past orders.
+
+Unavailable items (not ordered and not included in your total):
+2000 table napkins (white): We don't currently carry this item.
+1000 paper cups (biodegradable): We don't currently carry this item.
+1000 sheets of A4 white printer paper: We can't source this quantity before your deadline (earliest availability: 2025-04-18).",True,45231.6,45281.6,50.0,50.0,0.0,True,0,2025-04-15,0
+18,2025-04-14,45281.6,4668.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+1000 sheets of standard printing paper: We don't currently carry this item.
+500 sheets of high-quality white cardstock: We can't source this quantity before your deadline (earliest availability: 2025-04-18).
+200 sheets of colored paper in assorted colors: We can't source this quantity before your deadline (earliest availability: 2025-04-18).",False,45281.6,45281.6,0.0,0.0,0.0,True,0,2025-04-15,0
+19,2025-04-15,45274.1,4668.4,"Thank you for your request.
+
+Confirmed items:
+Cardstock, 1000 units, ships on 2025-04-19.
+
+Total for the confirmed items: $142.50. Your order totals 1,000 units, so our 5% bulk discount for orders of 1,000-9,999 units applies.
+
+Unavailable items (not ordered and not included in your total):
+1500 sheets of A3 matte paper: We don't currently carry this item.
+2000 sheets of A4 glossy paper: We can't source this quantity before your deadline (earliest availability: 2025-04-22).",True,45281.6,45274.1,-7.5,142.5,150.0,True,0,2025-04-20,0
+20,2025-04-17,45274.1,4668.4,"Thank you for your request.
+
+Unavailable items (not ordered and not included in your total):
+5000 flyers: We don't currently carry this item.
+2000 posters: We don't currently carry this item.
+10000 tickets: We don't currently carry this item.",False,45274.1,45274.1,0.0,0.0,0.0,True,0,2025-05-15,0

@@ -1,0 +1,98 @@
+MUNDER DIFFLIN MULTI-AGENT SYSTEM - DESIGN NOTES AND REFLECTION
+================================================================
+
+PART 1 - ARCHITECTURE AND DESIGN DECISIONS
+-------------------------------------------
+The system uses five agents (smolagents ToolCallingAgent, gpt-4o-mini), within the limit of five:
+
+  OrchestratorAgent (hub) - receives each customer request and delegates to the workers:
+    ask_inventory_agent -> InventoryAgent: find_catalog_item, check_inventory_snapshot,
+                           check_item_stock, order_stock, replenish_low_stock
+    ask_quoting_agent   -> QuotingAgent:   search_past_quotes, calculate_quote
+    ask_sales_agent     -> SalesAgent:     finalize_sale
+  BusinessAdvisorAgent - runs once after all requests; read-only (review_business_health).
+
+All seven required helper functions are used by the tools: get_all_inventory, get_stock_level,
+create_transaction, get_supplier_delivery_date, get_cash_balance, generate_financial_report,
+search_quote_history.
+
+Why orchestrator + specialists: each worker has a small, focused tool set, which keeps the
+LLM's choices narrow, and the orchestrator owns the workflow order (stock -> quote -> sale).
+
+The central design principle: agents decide WHAT to do; code decides WHAT IS TRUE.
+Anything that affects money, stock or what a customer is told is enforced in code:
+  - Prices, bulk discounts (0% / 5% / 10%), stock checks and cash checks are calculated in code.
+  - Check-then-commit: order_stock and finalize_sale verify before writing any transaction.
+  - Quote ID gate: finalize_sale only accepts a real, unused quote, so prices cannot be
+    invented and an order cannot be sold twice.
+  - The customer's request is split into its own item lines BY CODE. Every agent call is
+    matched to one of those lines; the customer's wording decides the catalog item, and a
+    re-worded or invented substitute maps back to the customer's line instead of becoming a
+    new order.
+  - The delivery deadline is read from the customer's text BY CODE (e.g. "April 10, 2025");
+    the agent's deadline is ignored.
+  - A completion check guarantees every confirmed line is quoted and every quote finalized.
+  - The customer reply is written from verified facts only, then checked in code (standard
+    opening, no dollar amount unless a sale was recorded, the recorded total present, nothing
+    internal). A reply that breaks any rule is replaced by one built directly from the facts.
+
+PART 2 - EVALUATION RESULTS (test_results.csv, 20 requests)
+------------------------------------------------------------
+  Requests fulfilled (at least one item sold):   12 of 20
+  Revenue from the run:                          $1,400.00
+  Final cash / inventory:                        $45,274.10 / $4,668.40
+  Total assets:                                  $49,942.50 (start $50,000.00; change -$57.50)
+  Rows that reconcile (cash change = recorded
+    sale - restock spend):                       20 of 20
+  Unfulfilled requests that changed cash:        0
+  Confirmed items the customer did not request:  0
+  Confirmed items shipping after the deadline:   0
+
+Each row records cash_before, cash_after, cash_delta, recorded_sale_total, restock_spend,
+reconciled, unrequested_lines, customer_deadline and late_lines, and audit_results() checks
+every row before the run ends. Every declined item states its true reason: either "We don't
+currently carry this item" or "We can't source this quantity before your deadline (earliest
+availability: <date>)". Partial orders confirm what can be supplied and state the total only
+for confirmed items.
+
+Strengths: the system never charges for, confirms or quotes anything that code has not
+verified; every customer statement traces to a recorded fact; and the books reconcile row by
+row.
+
+What changed after review (and why):
+  - First review: a declined request changed cash, and one reply's total did not match the
+    ledger. Fix: transactions are booked on the request date, restocking only follows a recorded
+    sale, and customer totals come only from the finalized sale.
+  - Second review: "A4 printer paper" was declined as "not carried" although A4 paper is
+    stocked. Fix: the item matcher was rewritten (named items outrank generic synonyms; sizes
+    we don't carry, such as A3, never match a stocked item), with a self-check of known wordings.
+  - Our own review of the replies before resubmitting found three more problems the existing
+    checks passed: the inventory agent sometimes re-ordered a declined line as a substitute the
+    customer never asked for; when the orchestrator ran two inventory calls at once, one used
+    the default deadline instead of the customer's; and the LLM occasionally broke the reply
+    rules (for example, "Total: $0.00" when nothing was sold). The fixes above (customer lines
+    and deadline owned by code, a code check on every reply) remove all three, and the new
+    audit columns prove it for every row.
+The lesson: passing checks is not the same as being right. Each defect was found by reading
+the actual replies, and each fix added a check so it cannot pass silently again.
+
+PART 3 - SUGGESTED IMPROVEMENTS
+--------------------------------
+1. Margin. Stock is bought and sold at the same catalog price, so bulk discounts and restock
+   costs produce no profit: total assets fell $57.50 despite $1,400 of sales. Add a purchase
+   cost below the selling price (or a markup), and have the quoting rules protect a minimum
+   margin before applying discounts.
+
+2. Fewer agent steps. In requests 3 and 11 the inventory agent repeatedly retried declined
+   lines with new wording until it reached its 20-step limit. Code already decides each line's
+   outcome, so the agent could be reduced to interpreting the request once, with code
+   processing every line. That would cut cost and run time without changing any result.
+
+3. Catalog coverage. 31 requested item lines were declined as not carried, led by A3 sizes,
+   poster paper, construction paper and party goods (napkins, cups). The business advisor's
+   "not carried" list gives a ranked view of demand to decide which items to stock.
+
+4. Customer choice on substitutes. When a close match exists (e.g. A4 paper for "A4 matte
+   paper"), the system tells the customer but does not sell it. A follow-up step that offers
+   the substitute and waits for the customer's confirmation would recover these sales
+   without ever selling something the customer did not choose.
